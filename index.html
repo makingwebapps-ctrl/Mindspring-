@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINDSPRING | Discover. Learn. Create.</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f5f7ff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 20px 7%;
+      border-bottom: 1px solid #27334e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 23px; font-weight: bold; }
+    .logo span { color: #72f0c0; }
+    nav a {
+      color: #aab4cc;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .hero {
+      padding: 85px 7%;
+      text-align: center;
+      background: radial-gradient(circle, #203453, #0b1020 70%);
+    }
+    .hero small { color: #72f0c0; letter-spacing: 3px; }
+    h1 { font-size: clamp(38px, 7vw, 70px); line-height: 1.1; }
+    h1 span { color: #72f0c0; }
+    .hero p { color: #aab4cc; max-width: 550px; margin: 20px auto; }
+    button {
+      background: #72f0c0;
+      color: #07131a;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section { padding: 55px 7%; }
+    h2 { font-size: 30px; }
+    .muted { color: #aab4cc; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+    .card {
+      background: #141c32;
+      border: 1px solid #27334e;
+      border-radius: 16px;
+      padding: 23px;
+    }
+    .card p { color: #aab4cc; }
+    .emoji { font-size: 30px; }
+    .quiz { max-width: 650px; }
+    .quiz button {
+      margin: 5px;
+      background: #27334e;
+      color: white;
+    }
+    #feedback { color: #72f0c0; font-weight: bold; }
+    footer {
+      padding: 25px;
+      text-align: center;
+      border-top: 1px solid #27334e;
+      color: #aab4cc;
+    }
+    @media(max-width: 600px) {
+      header { flex-wrap: wrap; gap: 12px; }
+      nav a { margin-left: 8px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MIND<span>SPRING</span></div>
+  <nav>
+    <a href="#explore">Explore</a>
+    <a href="#challenge">Challenges</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <small>WELCOME TO A WORLD OF DISCOVERY</small>
+    <h1>Where curiosity becomes <span>knowledge.</span></h1>
+    <p>
+      Discover new ideas, explore technology, learn useful skills
+      and turn your imagination into something real.
+    </p>
+    <a href="#explore"><button>Start Exploring →</button></a>
+  </div>
+
+  <section id="explore">
+    <h2>Explore your curiosity.</h2>
+    <p class="muted">Choose a world. Discover something new.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">💻</div>
+        <h3>Technology</h3>
+        <p>Explore coding, websites, apps and digital innovation.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🔬</div>
+        <h3>Science</h3>
+        <p>Ask questions and discover how the world works.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🎨</div>
+        <h3>Creativity</h3>
+        <p>Turn imaginative ideas into exciting projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="challenge">
+    <h2>The Challenge Arena</h2>
+    <p class="muted">Test your knowledge with a quick question.</p>
+
+    <div class="card quiz">
+      <h3>Which language structures a webpage?</h3>
+      <button onclick="checkAnswer('CSS')">CSS</button>
+      <button onclick="checkAnswer('HTML')">HTML</button>
+      <button onclick="checkAnswer('JavaScript')">JavaScript</button>
+      <p id="feedback"></p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Curiosity starts everything.</h2>
+    <p class="muted">
+      MINDSPRING is a learning and discovery platform designed
+      to help young minds explore, learn, experiment and create.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 MINDSPRING · Discover. Learn. Create.
+</footer>
+
+<script>
+  function checkAnswer(answer) {
+    const feedback = document.getElementById("feedback");
+
+    if (answer === "HTML") {
+      feedback.textContent = "Correct! HTML structures a webpage. 🎉";
+    } else {
+      feedback.textContent = "Not quite! Try again. 💡";
+    }
+  }
+</script>
+
+</body>
+</html>
